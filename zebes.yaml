@@ -1,22 +1,22 @@
 application:
-  name: 							  [string]
-	version: 						  [string]
-	artifactName:					[string - optional] 
-  slackChannel:			  	[string - optional]
+  name: #[string]
+  version: #[string]
+  artifactName: #[string - optional] 
+  slackChannel: #[string - optional]
   stack:
-    language:           [string - optional]
-    languageVersion:    [string - optional]
-    buildType:          [string - optional]
+    language: #[string - optional]
+    languageVersion: #[string - optional]
+    buildType: #[string - optional]
 	  
 ci:
   pipeline:
-    type:							  [string - optional]
-	linter:
-  		iac: 					  	[boolean - optional]
-      language:					[string - optional]
+    type: #[string - optional]
+  linter:
+    iac: #[boolean - optional]
+    language: #[string - optional]
 		
 cd:
 # TBD
 
 cloud:
-	provider:						  [string - optional]	
+  provider: #[string - optional]
