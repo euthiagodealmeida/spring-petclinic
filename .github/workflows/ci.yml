@@ -2,9 +2,9 @@ name: Java CI with Actions
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: euthiagodealmeida/conveyor-actions/.github/actions/shared/checkout@develop
+        with:
+          fetch-depth: 1
+          lfs: false
+          submodules: false
 
       - name: Build Project
         uses: euthiagodealmeida/conveyor-actions/.github/actions/java/build@develop
