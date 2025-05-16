@@ -280,6 +280,7 @@
         <configuration>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+          <generateGitPropertiesFile>false</generateGitPropertiesFile>
         </configuration>
       </plugin>
       <!-- Spring Boot Actuator displays sbom-related information if a CycloneDX SBOM file is
