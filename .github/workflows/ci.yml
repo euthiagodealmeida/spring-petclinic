@@ -1,0 +1,23 @@
+name: Java CI with Actions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: euthiagodealmeida/conveyor-actions/.github/actions/shared/checkout@develop
+
+      - name: Build Project
+        uses: euthiagodealmeida/conveyor-actions/.github/actions/java/build@develop
+        with:
+          java-version: '17'
+          java-distribution: 'temurin'
+          build-command: 'mvn -B clean compile'
+          cache-enabled: 'true'
