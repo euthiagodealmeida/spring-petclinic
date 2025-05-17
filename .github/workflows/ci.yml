@@ -18,7 +18,7 @@ on:
 
 jobs:
   java-build:
-    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java-workflow.yml@main
+    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java-workflow.yml@develop
     with:
       java-version: ${{ github.event.inputs.java-version }}
       build-command: ${{ github.event.inputs.build-command }}
