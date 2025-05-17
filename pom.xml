@@ -195,9 +195,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>${maven-checkstyle.version}</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
         <dependencies>
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
@@ -280,7 +277,6 @@
         <configuration>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
-          <generateGitPropertiesFile>false</generateGitPropertiesFile>
         </configuration>
       </plugin>
       <!-- Spring Boot Actuator displays sbom-related information if a CycloneDX SBOM file is
