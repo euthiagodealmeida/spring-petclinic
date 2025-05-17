@@ -18,10 +18,10 @@ on:
 
 jobs:
   java-build:
-    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java/workflow.yml@main
+    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java-workflow.yml@main
     with:
-      java-version: ${{ github.event.inputs.java-version || '17' }}
-      build-command: ${{ github.event.inputs.build-command || 'mvn -B clean verify' }}
+      java-version: ${{ github.event.inputs.java-version }}
+      build-command: ${{ github.event.inputs.build-command }}
       fetch-depth: '1'
       lfs: 'false'
       submodules: 'false'
