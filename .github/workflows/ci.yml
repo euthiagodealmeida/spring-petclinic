@@ -1,27 +1,27 @@
-name: Java CI with Actions
+name: Build Application
 
 on:
   push:
     branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
   workflow_dispatch:
+    inputs:
+      java-version:
+        description: 'Java version'
+        default: '17'
+        type: string
+      build-command:
+        description: 'Build command'
+        default: 'mvn -B clean verify'
+        type: string
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: euthiagodealmeida/conveyor-actions/.github/actions/shared/checkout@develop
-        with:
-          fetch-depth: 1
-          lfs: false
-          submodules: false
-
-      - name: Build Project
-        uses: euthiagodealmeida/conveyor-actions/.github/actions/java/build@develop
-        with:
-          java-version: '17'
-          java-distribution: 'temurin'
-          build-command: 'mvn -B clean compile'
-          cache-enabled: 'true'
+  java-build:
+    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java/workflow.yml@main
+    with:
+      java-version: ${{ github.event.inputs.java-version || '17' }}
+      build-command: ${{ github.event.inputs.build-command || 'mvn -B clean verify' }}
+      fetch-depth: '1'
+      lfs: 'false'
+      submodules: 'false'
