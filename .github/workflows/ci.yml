@@ -24,8 +24,12 @@ jobs:
   CI:
     uses: euthiagodealmeida/conveyor-actions/.github/workflows/java-workflow.yml@develop
     with:
-      java-version: ${{ github.event.inputs.java-version }}
-      build-command: ${{ github.event.inputs.build-command }}
+      # Git
       fetch-depth: '1'
       lfs: 'false'
       submodules: 'false'
+      # Java
+      java-version: ${{ github.event.inputs.java-version }}
+      build-command: ${{ github.event.inputs.build-command }}
+      artifact-name: ${{ github.event.inputs.articact-name }}
+      
