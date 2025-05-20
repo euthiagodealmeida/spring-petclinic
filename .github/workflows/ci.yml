@@ -15,9 +15,9 @@ on:
         description: 'Build command'
         default: 'mvn -B clean verify'
         type: string
-      artifact-name:
+      artifact-path:
         description: 'Packaged artifact name'
-        default: 'artifact.jar'
+        default: 'target/*.jar'
         type: string
 
 jobs:
@@ -29,5 +29,5 @@ jobs:
       submodules: 'false'
       java-version: ${{ github.event.inputs.java-version }}
       build-command: ${{ github.event.inputs.build-command }}
-      artifact-name: ${{ github.event.inputs.articact-name }}
+      artifact-path: ${{ github.event.inputs.artifact-path }}
       
