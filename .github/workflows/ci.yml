@@ -25,7 +25,7 @@ on:
         type: string
 
 jobs:
-  CI:
+  ci-java:
     uses: euthiagodealmeida/conveyor-actions/.github/workflows/java-workflow.yml@develop
     with:
       fetch-depth: '1'
