@@ -15,6 +15,10 @@ on:
         description: 'Build command'
         default: 'mvn -B clean verify'
         type: string
+      artifact-name:
+        description: 'Packaged artifact name'
+        default: 'artifact.jar'
+        type: string
 
 jobs:
   CI:
