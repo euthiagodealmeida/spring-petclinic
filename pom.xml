@@ -11,7 +11,15 @@
 
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-<!--   <version>3.4.0-SNAPSHOT</version> -->
+  <version>3.4.0-SNAPSHOT</version>
+
+  <distributionManagement>
+    <repository>
+      <id>repsy</id>
+      <name>My Private Maven Repository on Repsy</name>
+      <url>https://repo.repsy.io/mvn/thiagodealmeida/default</url>
+    </repository>
+  </distributionManagement>
 
   <name>petclinic</name>
 
