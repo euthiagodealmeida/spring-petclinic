@@ -26,12 +26,13 @@ on:
 
 jobs:
   ci-java:
-    uses: euthiagodealmeida/conveyor-actions/.github/workflows/java/java-workflow.yml@develop
+    uses: euthiagodealmeida/conveyor-actions/.github/workflows/workflow-orchestrator.yml@develop
     with:
-      fetch-depth: '1'
-      lfs: 'false'
-      submodules: 'false'
       java-version: ${{ github.event.inputs.java-version }}
       build-command: ${{ github.event.inputs.build-command }}
       artifact-name: ${{ github.event.inputs.artifact-name }}
       artifact-path: ${{ github.event.inputs.artifact-path }}
+      fetch-depth: '1'
+      lfs: 'false'
+      submodules: 'false'
+
