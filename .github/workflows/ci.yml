@@ -26,7 +26,7 @@ on:
 
 jobs:
   ci-java:
-    uses: euthiagodealmeida/conveyor-actions/.github/workflows/workflow-orchestrator.yml@develop
+    uses: euthiagodealmeida/conveyor-actions/.github/workflows/orchestrator.yml@develop
     with:
       java-version: ${{ github.event.inputs.java-version }}
       build-command: ${{ github.event.inputs.build-command }}
