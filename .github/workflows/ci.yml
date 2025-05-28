@@ -5,33 +5,16 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
-    inputs:
-      java-version:
-        description: 'Java version'
-        default: '17'
-        type: string
-      build-command:
-        description: 'Build command'
-        default: 'mvn -B clean verify'
-        type: string
-      artifact-name:
-        description: 'Packaged artifact name'
-        default: 'articact'
-        type: string
-      artifact-path:
-        description: 'Packaged artifact name'
-        default: 'target/*.jar'
-        type: string
-
+    
 jobs:
   ci-java:
     uses: euthiagodealmeida/conveyor-actions/.github/workflows/orchestrator.yml@develop
     with:
-      java-version: ${{ github.event.inputs.java-version }}
-      build-command: ${{ github.event.inputs.build-command }}
-      artifact-name: ${{ github.event.inputs.artifact-name }}
-      artifact-path: ${{ github.event.inputs.artifact-path }}
+      java-distribution: 'temurin'
+      java-version: 17
+      # build-command: ${{ github.event.inputs.build-command }}
+      artifact-name: 'petclinic-artifact'
+      artifact-path: 'target'
       fetch-depth: '1'
       lfs: 'false'
       submodules: 'false'
